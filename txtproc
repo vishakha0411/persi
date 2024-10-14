@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Document Processing Tool</h1>
+    <form id="processingForm">
+        <label>Enter Document</label>
+        <textarea id="documentInput" placeholder="Type or paste your document here..."></textarea><br>
+        <label>Find and Replace Text</label>
+        <input id="findText" placeholder="Enter text to find">
+        <input id="replaceText" placeholder="Enter text to replace"><br>
+        <label>Count Occurrences of Word</label>
+        <input id="countWords" placeholder="Enter word to count"><br>
+        <button type="submit" id="processDocument">Process Document</button>
+    </form>
+
+    <h3>Processed Document</h3>
+    <div id="processedDocument"></div>
+
+    <script>
+        document.getElementById('processingForm').addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var text = document.getElementById('documentInput').value;
+            var findText = document.getElementById('findText').value;
+            var replace = document.getElementById('replaceText').value;
+            var count = document.getElementById('countWords').value;
+
+
+            var regexFind = new RegExp(findText, 'g');
+            var processedText = text.replace(regexFind, replace);
+
+      
+            var regexCount = new RegExp(count, 'g');
+            var occurrences = (text.match(regexCount) || []).length;
+
+            const result = document.getElementById('processedDocument');
+            result.innerHTML = `<p>Document with Replaced Text: ${processedText}</p>
+                                <p>Occurrences of "${count}": ${occurrences}</p>`;
+        });
+    </script>
+</body>
+</html>

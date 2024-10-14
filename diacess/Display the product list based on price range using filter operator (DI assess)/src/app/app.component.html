@@ -1,0 +1,20 @@
+<h1>Filter Products</h1>
+
+<div class="productForm">
+  <input placeholder="Product starting price" type="text" id="startPrice" [(ngModel)]="sPrice">
+  <input placeholder="Product ending price" type="text" id="endPrice" [(ngModel)]="ePrice">
+  <input type="button" value="search" id="search" (click)="applyFilter()">
+</div>
+
+<h1>Product Details</h1>
+
+<div class="productList">
+  <mat-card class="card mr40" *ngFor="let p of products">
+    <img class="product-img" [src]="p.productImage" alt="{{p.name}}">
+    <p class="productName">{{p.name}}</p>
+    <p class="category">Category: {{p.category}}</p>
+    <p class="price">Price: {{p.price}}</p>
+  </mat-card>
+
+  <p id="message" *ngIf="products.length === 0">No Products available</p>
+</div>

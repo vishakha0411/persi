@@ -1,0 +1,30 @@
+
+.content{
+        background-color: azure;
+        border: solid;
+        margin-left: 300px;
+        margin-right: 300px;     
+        text-align: center; 
+}
+#result{
+    padding-top: 150px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-bottom: 150px;
+    border-style: solid;
+    border-color: black;
+    background-color:rgb(227, 235, 227);
+}
+#submit{
+    color:white;
+    background-color: lightblue;
+
+}
+#name,#price,#brand,#image{
+    padding-left: 10px;
+    margin-left: 100px; 
+    margin-right: 100px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+
+}

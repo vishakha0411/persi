@@ -1,0 +1,161 @@
+body{
+  font-family: sans-serif;
+}
+
+#homeHeader{
+  text-align: center;
+}
+
+.homeImg{
+  width: 100%;
+}
+
+.btnSection{
+  display: flex;
+  justify-content: center;
+}
+
+#exploreBtn{
+  background-color: orange;
+  color: white;
+  border: none;
+  font-size: 1.5vw;
+  padding: 0.8vw 3vw;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 520px;
+}
+
+#libraryHome{
+  position: relative;
+}
+
+.homeImg{
+  position: absolute;
+}
+
+#introText{
+  position: absolute;
+  color: white;
+  font-size: 1.4vw;
+  width: 42%;
+  text-align: justify;
+  top: 90px !important;
+  left: 80px;
+}
+
+#categoryHeader{
+  text-align: center;
+}
+
+select{
+  padding: 0.3vw 1vw ;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 1.2vw;
+}
+
+.categoryLayout{
+  width: 50%;
+  margin: auto;
+}
+
+#selectSection{
+  display: flex;
+  justify-content: center;
+  margin-top: 3vw;
+}
+
+.categorySelect{
+  text-align: center;
+  color: red;
+  padding: 10vw 3vw;
+  font-size: 1.5vw;
+  font-weight: bold;
+  margin-top: 2vw;
+  box-shadow: 0px 1px 5px gainsboro;
+}
+
+#categoryContent{
+  margin-top: 2vw;
+  padding:2vw;
+  background-color: rgb(247, 240, 233);
+}
+
+.contentSection{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+}
+
+#content1{
+  display: flex;
+  align-items: center;
+}
+
+.categoryImage{
+  width: 95%;
+  height: 300px;
+}
+
+#categoryName{
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+#categoryDesc{
+  text-align: justify;
+  font-size: 1vw;
+  padding-top: 0.4vw;
+}
+
+.btnSection{
+  margin-top: 2vw;
+}
+
+#viewBtn{
+  background-color: brown;
+  color: white;
+  border: none;
+  font-size: 1.3vw;
+  border: none;
+  padding: 0.4vw 2vw 0.5vw;
+  cursor: pointer;
+}
+
+#descriptionHeader{
+  text-align: center;
+}
+
+#descImage{
+  display: flex;
+  justify-content: center;
+}
+
+.imageCategory{
+  width: 300px;
+  height: 300px;
+
+}
+
+#descLayout{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  width: 70%;
+  margin: auto;
+  margin-top: 2vw;
+}
+
+.bookContent{
+  box-shadow: 0px 1px 15px gainsboro;
+  margin: 1vw;
+  padding: 1vw;
+}
+
+.bookName{
+  font-weight: bold;
+}
+
+.bookDesc{
+  font-size: 1vw;
+}

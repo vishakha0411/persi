@@ -1,0 +1,63 @@
+{
+    "user-1": {
+      "name": "John",
+      "userId": "1",
+      "dob": "30-08-2000",
+      "email": "john@gmail.com"
+    },
+    "user-2": {
+      "name": "Jane",
+      "userId": "2",
+      "dob": "15-05-1995",
+      "email": "jane@gmail.com"
+    },
+    "user-3": {
+      "name": "Sam",
+      "userId": "3",
+      "dob": "10-12-1990",
+      "email": "sam@example.com"
+    },
+    "user-4": {
+      "name": "Alice",
+      "userId": "4",
+      "dob": "22-04-1988",
+      "email": "alice@example.com"
+    },
+    "user-5": {
+      "name": "Bob",
+      "userId": "5",
+      "dob": "05-11-1999",
+      "email": "bob@example.com"
+    },
+    "user-6": {
+      "name": "Charlie",
+      "userId": "6",
+      "dob": "08-03-1992",
+      "email": "charlie@example.com"
+    },
+    "user-7": {
+      "name": "David",
+      "userId": "7",
+      "dob": "17-07-1993",
+      "email": "david@example.com"
+    },
+    "user-8": {
+      "name": "Eva",
+      "userId": "8",
+      "dob": "30-09-1997",
+      "email": "eva@example.com"
+    },
+    "user-9": {
+      "name": "Frank",
+      "userId": "9",
+      "dob": "14-06-1985",
+      "email": "frank@example.com"
+    },
+    "user-10": {
+      "name": "Grace",
+      "userId": "10",
+      "dob": "25-12-1996",
+      "email": "grace@example.com"
+    }
+  }
+  

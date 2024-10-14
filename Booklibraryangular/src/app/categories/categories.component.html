@@ -1,0 +1,135 @@
+<h1>Category</h1>
+<!--
+<select formControlName="profile">
+  <option [ngValue]="null" disabled>Choose your profile</option>
+  <option *ngFor="let prf of allProfiles" [ngValue]="prf">
+   {{ prf.prName }}
+  </option>
+</select> 
+-->
+
+<h1>Category</h1>
+
+<!-- Add a form and connect it with ngModel -->
+<form [formGroup]="categoryForm">
+  
+  <!-- Select dropdown with required validation -->
+  <select [(ngModel)]="s" name="categorySelect" required #categorySelect="ngModel">//formControlName
+    <option value="" disabled selected>Select a category</option>
+    <option *ngFor="let c of category" [ngValue]="c">{{c.name}}</option>
+  </select>
+
+  <!-- Validation error message for required selection -->
+  <div *ngIf="categorySelect.invalid && categorySelect.touched" class="error">
+    Please select a category.
+  </div>
+
+  <!-- Show selected category details -->
+  <div *ngIf="s">
+    <div>{{s?.name}}</div>//{{form.get('name').value}}
+    <div>{{s?.description}}</div>
+    <button [routerLink]="['/categories', s.name]">View More</button>
+  </div>
+
+  <!-- Message if no category is selected -->
+  <div *ngIf="!s && categoryForm.submitted">Please Select Category</div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<input type="text" id="name" name="name" class="form-control"
+                required minlength="4" appForbiddenName="bob"
+                [(ngModel)]="actor.name" #name="ngModel">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+              class="alert">
+            <div *ngIf="name.hasError('required')">
+              Name is required.
+            </div>
+            <div *ngIf="name.hasError('minlength')">
+              Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="name.hasError('forbiddenName')">
+              Name cannot be Bob.
+            </div>
+          </div>
+
+
+
+<!-- Form for category selection -->
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+  
+  <!-- Select dropdown with form control for validation -->
+  <select id="selecttype" formControlName="categorySelect">
+    <option value="" disabled selected>Select a category</option>
+    <option *ngFor="let c of category" [ngValue]="c">
+      {{ c.name }}
+    </option>
+  </select>
+
+  <!-- Display validation message if the category is not selected -->
+  <div *ngIf="categoryForm.controls['categorySelect'].invalid && categoryForm.controls['categorySelect'].touched" class="error">
+    Please select a category.
+  </div>
+
+  <!-- Show selected category details -->
+  <div *ngIf="categoryForm.controls['categorySelect'].value">
+    <div>{{ categoryForm.controls['categorySelect'].value?.name }}</div>
+    <div>{{ categoryForm.controls['categorySelect'].value?.description }}</div>
+    <button type="submit">View More</button>
+  </div>
+
+</form>
+
+<!-- Message when no category is selected -->
+<div *ngIf="categoryForm.controls['categorySelect'].invalid && categoryForm.submitted">
+  Please select Category.
+</div>
+
+
+
+
+
+
+
+
+
+<h1>Category</h1>
+
+<!-- Form for category selection -->
+<form [formGroup]="categoryForm">
+  
+  <!-- Select dropdown with form control for validation -->
+  <select id="selecttype" formControlName="categorySelect" (change)="selected = categoryForm.controls['categorySelect'].value">
+    <option value="" disabled selected>Select a category</option>
+    <option *ngFor="let c of category" [ngValue]="c">
+      {{ c.name }}
+    </option>
+  </select>
+
+  <!-- Display validation message if no category is selected -->
+  <div *ngIf="categoryForm.controls['categorySelect'].invalid && categoryForm.controls['categorySelect'].touched" class="error">
+    Please select a category.
+  </div>
+
+  <!-- Show selected category details -->
+  <div *ngIf="selected">
+    <div>{{ selected?.name }}</div>
+    <div>{{ selected?.description }}</div>
+    <button [routerLink]="['/categories', selected?.name]">View More</button>
+  </div>
+
+</form>
+
+<!-- Message when no category is selected -->
+<div *ngIf="!selected && categoryForm.controls['categorySelect'].touched">
+  Please select a category.
+</div>
+

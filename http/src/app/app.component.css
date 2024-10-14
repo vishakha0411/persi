@@ -1,0 +1,73 @@
+.card {
+    width:300px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    font-family: monospace;
+    height: 300px;
+    box-shadow: 0 10px 10px 0 rgba(8, 0, 0, 0.2);
+}
+
+
+.prod-img {
+    margin-left: 115px;
+    margin-right: auto;
+    width: 90px;
+    height: 90px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 0px;
+    font-family: monospace;
+}
+
+.productName {
+    text-align: center;
+    padding-top: 15px;
+    font-family: monospace; 
+}
+
+.sideNav {
+    width:300px;
+    height: 85%;
+    position: fixed;
+    background-color: bisque; 
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    /* margin-left: 10px; */
+    margin-right: 40px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+
+.sideContainer {
+    margin-left: 10px;
+    font-family: monospace;
+}
+
+.sideContent {
+    padding: 10px;
+    height: 83%;
+    position: fixed;
+    margin-bottom: 50px;
+    margin-right: 10px;
+    background-color: whitesmoke;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+mat-card-actions {
+    margin-left: 135px;
+}

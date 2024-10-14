@@ -1,0 +1,20 @@
+const Product = require("../models/Product");
+
+all code in add delete update .js
+
+/*
+var EmployeeModel = require('../models/employee')
+
+const EmployeeController = {}
+
+EmployeeController.insertEmployee = (req, res, next) => {
+  //Fill in the code
+}
+
+EmployeeController.getAllEmployees = (req, res, next) => {
+    //Fill in the code
+}
+
+module.exports = EmployeeController
+
+*/

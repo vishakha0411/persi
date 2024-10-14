@@ -1,0 +1,121 @@
+<div class="login-form sign-up">
+  <h1>New Employee</h1>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="form-card">
+      <div class="form-group h-form-style">
+        <label for="emp-name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="emp-name"
+          formControlName="name"
+        />
+        <div
+          id="name-error"
+          *ngIf="
+            employeeForm.get('name')?.errors &&
+            employeeForm.get('name')?.touched
+          "
+        >
+          {{ errorService.nameError }}
+        </div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label for="emp-desig">Designation</label>
+        <select
+          formControlName="designation"
+          class="form-control"
+          id="emp-desig"
+        >
+          <option *ngFor="let des of desigList" [value]="des">{{ des }}</option>
+        </select>
+        <div
+          id="des-error"
+          *ngIf="
+            employeeForm.get('designation')?.errors &&
+            employeeForm.get('designation')?.touched
+          "
+        >
+          Designation is required!
+        </div>
+      </div>
+      <div class="form-group h-form-style">
+        <label for="emp-mobile">Mobile Number</label>
+        <input
+          type="text"
+          class="form-control"
+          id="emp-mobile"
+          formControlName="mobileNumber"
+        />
+        <div
+          id="phone-error"
+          *ngIf="
+            employeeForm.get('mobileNumber')?.errors &&
+            employeeForm.get('mobileNumber')?.touched
+          "
+        >
+          {{ errorService.mobileError }}
+        </div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label for="emp-email">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="emp-email"
+          formControlName="email"
+        />
+        <div
+          id="email-error"
+          *ngIf="
+            employeeForm.get('email')?.errors &&
+            employeeForm.get('email')?.touched
+          "
+        >
+          {{ errorService.emailError }}
+        </div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label for="emp-age">Age</label>
+        <input
+          type="text"
+          class="form-control"
+          id="emp-age"
+          formControlName="age"
+        />
+        <div
+          id="age-error"
+          *ngIf="
+            employeeForm.get('age')?.errors && employeeForm.get('age')?.touched
+          "
+        >
+          {{ errorService.ageError }}
+        </div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label for="emp-doj">Date of Joining</label>
+        <input
+          type="date"
+          class="form-control"
+          id="emp-doj"
+          formControlName="dateOfJoining"
+        />
+        <div
+          id="doj-error"
+          *ngIf="
+            employeeForm.get('dateOfJoining')?.errors &&
+            employeeForm.get('dateOfJoining')?.touched
+          "
+        >
+          DOJ is required!
+        </div>
+      </div>
+
+      <button id="addEmployee" type="submit">ADD EMPLOYEE</button>
+    </div>
+  </form>
+</div>

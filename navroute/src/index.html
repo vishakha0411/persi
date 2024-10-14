@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>User and Product Details</title>
+  <base href="/"><!--basehref then app routing.mod.ts-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background-color: #f5f6f6;">
+  <app-root></app-root>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+1 index.html base href /
+2 approuting module.ts add import export check imports up
+3 app modulets import AppRoutingModule and in imports:[]
+html file me <router-outlet></router-outlet>
+
+generate dept and emp component
+
+configure the routes
+1 app routingmodule ts const routes:[]
+2 app.module
+
+add button and use directives to navigate
+go app.comp.html
+products
+
+where you want to add then take that html
+<div>
+  <a routerLink="/categories">login</a>
+</div>
+change it to button
+<div>
+  <button (click)="onlogin()" >login</button>
+</div>
+import {Router} from '@angular/router';
+in ts file in constructor(private router: Router)
+onlogin(){
+this.router.navigateByUrl('/categories'); other method this.router.navigate(['categories']);
+g
+
+app-routing-modules.ts 
+const routes:Routes=[
+{
+path:'login',
+component:LoginComponent
+},
+{
+path:''//path me '**' andr kiya toh kisiko bhi match krega aur page not found open krega page not f ka alg component bnana
+redirectTo:'login',
+pathMatch:'full'
+}
+]
+
+loginForm:FormGroup;
+submitted: boolean false;
+email:['', [Validators.required, validators.pattern('^[A-Za-z0-9,-]+\\.[A-Za-z{2,4}$]')]],
+ pass--['',[Validators.required, Validators.minLength(8), Validators.pattern(new RegExp('^(?=.*[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])'))]]
+get f(){
+return this.loginForm.controls;
+}
+}
+
+ngOnSubmit(){
+this.submitted=true;
+if(this.loginForm.valid){
+const requestbody :any={
+email:this.f['email'].value,
+password:this.f['pass'].value,}
+}}
+this.loginService.login(requestbody).subscribe(res)=>{
+if(res.status=='success'){
+}}
+-->

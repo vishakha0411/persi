@@ -1,0 +1,12 @@
+<!-- Fill your code -->
+<div id="question-creation">
+   <h2>Question</h2>
+   <input type="text" id="title" [(ngModel)]="title" placeholder="Title">
+   <br>
+   <input type="text" id="description" [(ngModel)]="description" placeholder="Description">
+   <button id="submit" (click)="addQuestion()">Add</button><!--button (click)="fireEvent()"-->
+</div>
+<hr>
+<div id="question-list" *ngFor="let q of questions;">
+<app-question [question]="q" (id)="editQuestion($event)"></app-question><!-- (childEvent)="message=$(event)"-->
+</div>

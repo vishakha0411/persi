@@ -1,0 +1,16 @@
+<!--Fill your code -->
+<!--Fill your code -->
+<h3 id='heading'>Mobile Phones</h3>
+<div [ngStyle]="{border:'1px solid black',margin:'20px',textAlign:'center'}" *ngFor="let p of productList" id="product{{p.id}}">
+    <img [src]="p.imageUrl" id="image{{p.id}}">
+    <h4 id='product-name{{p.id}}'>{{p.name}}</h4>
+    <p id='rating{{p.id}}'>{{p.rating}}</p>
+    <ul>
+    <li id='product-configuration{{p.id}}'>{{p.configuration}}</li>
+    <li id='product-display{{p.id}}'>{{p.display}}</li>
+    <li id='product-description{{p.id}}'>{{p.description}}</li>
+    </ul>
+    <p id='price{{p.id}}'><strong>{{p.price}}</strong></p>
+    <button id='booking{{p.id}}'>Book</button>
+</div>
+

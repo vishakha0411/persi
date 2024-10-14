@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "age": 28,
+        "email": "john.doe@example.com",
+        "designation": "Software Engineer"
+    },
+    {
+        "id": 2,
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "age": 32,
+        "email": "jane.smith@example.com",
+        "designation": "Product Manager"
+    },
+    {
+        "id": 3,
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "age": 25,
+        "email": "alice.johnson@example.com",
+        "designation": "UX Designer"
+    },
+    {
+        "id": 4,
+        "firstName": "Robert",
+        "lastName": "Brown",
+        "age": 40,
+        "email": "robert.brown@example.com",
+        "designation": "CTO"
+    },
+    {
+        "id": 5,
+        "firstName": "Emily",
+        "lastName": "Davis",
+        "age": 29,
+        "email": "emily.davis@example.com",
+        "designation": "Marketing Specialist"
+    },
+    {
+        "id": 6,
+        "firstName": "Michael",
+        "lastName": "Wilson",
+        "age": 35,
+        "email": "michael.wilson@example.com",
+        "designation": "DevOps Engineer"
+    },
+    {
+        "id": 7,
+        "firstName": "Sarah",
+        "lastName": "Lee",
+        "age": 27,
+        "email": "sarah.lee@example.com",
+        "designation": "Data Scientist"
+    },
+    {
+        "id": 8,
+        "firstName": "David",
+        "lastName": "Garcia",
+        "age": 30,
+        "email": "david.garcia@example.com",
+        "designation": "Sales Manager"
+    },
+    {
+        "id": 9,
+        "firstName": "Olivia",
+        "lastName": "Martinez",
+        "age": 24,
+        "email": "olivia.martinez@example.com",
+        "designation": "Front-End Developer"
+    },
+    {
+        "id": 10,
+        "firstName": "James",
+        "lastName": "Taylor",
+        "age": 38,
+        "email": "james.taylor@example.com",
+        "designation": "HR Manager"
+    }
+]

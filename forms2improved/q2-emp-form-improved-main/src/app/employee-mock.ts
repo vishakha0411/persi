@@ -1,0 +1,58 @@
+import { Employee } from "./employee.model"
+
+export const EMPLOYEE: Employee[] = [
+    {
+        emp_id:4536100,
+        emp_name:"Sanjith",
+        designation:"Production Manager",
+        mobile:9987045409,
+        email:"san@gmail.com",
+        age:32,
+        doj: new Date("2/2/2000"),
+    },
+    {
+        emp_id:4536101,
+        emp_name:"Rajesh",
+        designation:"Associate Engineer",
+        mobile:9987045409,
+        email:"raj@gmail.com",
+        age:32,
+        doj: new Date("2/5/2010"),
+    },
+    {
+        emp_id:4536102,
+        emp_name:"Nithila",
+        designation:"CFO",
+        mobile:9987782401,
+        email:"nit@gmail.com",
+        age:45,
+        doj: new Date("1/12/2010"),
+    },
+    {
+        emp_id:4536103,
+        emp_name:"Janani",
+        designation:"Engineering Manager",
+        mobile:9893248934,
+        email:"jan@gmail.com",
+        age:29,
+        doj: new Date("2/5/2002"),
+    },
+    {
+        emp_id:4536104,
+        emp_name:"Prem",
+        designation:"Engineer",
+        mobile:9893248934,
+        email:"jan@gmail.com",
+        age:29,
+        doj: new Date("1/12/2010"),
+    },
+    {
+        emp_id:4536105,
+        emp_name:"Radhika",
+        designation:"Engineering Manager",
+        mobile:9893248934,
+        email:"rad@gmail.com",
+        age:32,
+        doj: new Date("2/5/2000"),
+    },
+]

@@ -1,0 +1,32 @@
+<main>
+    <h2>Display product details using reactive forms </h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="input-container">
+    <label for="name"> Name </label>
+    <input type="text" id="name" formControlName="name" >
+    </div>
+    <div class="input-container">
+    <label for="price"> Price </label>
+    <input type="text" id="price" formControlName="price" >
+    </div>
+    <div class="input-container">
+    <label for="brand"> Brand </label>
+    <input type="text" id="brand" formControlName="brand" >
+    </div>
+    <div class="input-container">
+    <label for="img"> Image </label>
+    <input type="file" id="img" formControlName="image" >
+    </div>
+    <button type="submit" id="submit">Submit</button>
+    </form>
+    </main>
+    <section *ngIf="clicked">
+    <div>
+    <p id="resultName"> {{form.get('name').value}}</p>
+    <p id="resultPrice"> {{form.get('price').value}}</p>
+    <p id="resultBrand"> {{form.get('brand').value}}</p>
+    </div>
+    <div>
+    <img [src]="imagePath">
+    </div>
+    </section>

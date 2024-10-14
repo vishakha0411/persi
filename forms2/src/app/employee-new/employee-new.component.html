@@ -1,0 +1,57 @@
+//Fill your code here
+<div class="login-form sign-up">
+  New Employee
+  <div class="form-card">
+    <form [formGroup]="employeeForm" (ngSubmit)="createForm()">
+
+      <div class="form-group h-form-style">
+        <label>Name</label>
+        <input type="text" id="emp-name" class="form-control" name="name" formControlName="name" />
+        <div *ngIf="f.name.errors?.required && f.name.touched" id="name-error">Name is required!</div>
+        <div *ngIf="f.name.errors?.minlength && f.name.touched" id="name-error">Name must be at least 4 chars long!
+        </div>
+        <div *ngIf="f.name.errors?.pattern && f.name.touched" id="name-error">Name cannot have numbers or special
+          characters!</div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label>Designation</label>
+        <select class="form-control" id="emp-desig" name="des" formControlName="des">
+          <option *ngFor="let d of desigList" [value]="d">{{d}}</option>
+        </select>
+        <div *ngIf="f.des.errors?.required && f.des.touched" id="des-error">Designation is required!</div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label>Mobile Number</label>
+        <input type="text" id="emp-mobile" class="form-control" name="phone" formControlName="phone" />
+        <div *ngIf="f.phone.errors?.required && f.phone.touched" id="phone-error">Mobile Number is required!</div>
+        <div *ngIf="f.phone.errors?.pattern && f.phone.touched" id="phone-error">Mobile Number is invalid!</div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label>Email</label>
+        <input type="text" id="emp-email" class="form-control" name="email" formControlName="email" />
+        <div *ngIf="f.email.errors?.required && f.email.touched" id="email-error">Email ID is required!</div>
+        <div *ngIf="f.email.errors?.email && f.email.touched" id="email-error">Email ID is invalid!</div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label>Age</label>
+        <input type="text" id="emp-age" class="form-control" name="age" formControlName="age" />
+        <div *ngIf="f.age.errors?.required && f.age.touched" id="age-error">Age is required!</div>
+        <div *ngIf="f.age.errors?.pattern && f.age.touched" id="age-error">Invalid age input!</div>
+        <div *ngIf="(f.age.errors?.min || f.age.errors?.max) && f.age.touched" id="age-error">Incorrect age input!
+          Accepted only integers of range 20-60!</div>
+      </div>
+
+      <div class="form-group h-form-style">
+        <label>Date of joining</label>
+        <input type="date" id="emp-doj" class="form-control" name="doj" formControlName="doj" />
+        <div *ngIf="f.doj.errors?.required && f.doj.touched" id="doj-error">DOJ is required!</div>
+      </div>
+
+      <button id="addEmployee" type="submit"    [disabled]="employeeForm.invalid" >ADD EMPLOYEE</button>
+    </form>
+  </div>
+</div>

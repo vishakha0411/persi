@@ -1,0 +1,23 @@
+<header><h2> {{title}}</h2></header>
+<mat-sidenav-container class="sideContainer" >
+<mat-sidenav class="sideNav" mode="side" opened>
+<mat-nav-list>Home</mat-nav-list>
+<mat-nav-list>Mobile Phones</mat-nav-list>
+<mat-nav-list>Accessories</mat-nav-list>
+<mat-nav-list>Speakers</mat-nav-list>
+<mat-nav-list>Watches</mat-nav-list>
+<mat-nav-list>Login</mat-nav-list>
+</mat-sidenav>
+<mat-sidenav-content>
+<!-- Fill your code here -->
+<mat-card class="card" *ngFor="let item of product">
+<img class="prod-img" src="{{item.productImage}}">
+<h2 class="productName">{{item.name}}</h2>
+<p class="category">Category : {{item.category}}</p>
+<p class="price">Price : {{item.price}}</p>
+<p class="quantity">AvailQuantity : {{item.availQuantity}}</p>
+<button class="buyProd">Buy</button>
+</mat-card>
+</mat-sidenav-content>
+</mat-sidenav-container>
+<footer>Powered by Shopcules.com</footer>

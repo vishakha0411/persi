@@ -1,0 +1,72 @@
+mat-card {
+    width: 250px;
+    height: 260px;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-family: monospace;
+    box-shadow: 0 10px 10px 0 rgba(8, 0, 0, 0.2);
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.productName, .category, .price {
+    padding: 10px;
+    font-size: 15px;
+}
+
+.product-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: monospace;
+    color: black;
+}
+
+#message {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    color: darkgreen;
+}
+
+.productForm {
+    border: 1px solid black;
+    width: 530px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.productForm input[type="text"] {
+    width: 150px;
+    margin-right: 10px;
+    font-family: monospace;
+}
+
+.productForm input[type="button"] {
+    padding: 5px 10px;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 12px;
+    text-align: center;
+}
+
+.productList {
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 0 auto;
+    width: fit-content;
+}

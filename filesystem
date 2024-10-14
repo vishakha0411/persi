@@ -1,0 +1,114 @@
+# File System in Node.js 
+remove jsx text
+
+- Reading file content Synchronously
+  
+    const fs = require('fs');
+    
+    // 1st argument is the  path of file, 2nd is character encoding
+    const fileContent =  fs.readFileSync('./sample.txt', 'utf-8');
+    console.log(fileContent);
+
+    
+- Reading file content Asynchronously with callback
+    
+    const fs = require("fs");
+    
+    // 1st argument is the  path of file, 2nd is character encoding, 3rd is the callback function
+    // the callback function receives 2 argument 1st is the error object and 2nd is the file content
+    fs.readFile("./sample.txt", "utf-8", (err, content) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log(content);
+    });
+    
+    
+- Reading file content Asynchronously with promises
+
+    const fs  = require('fs').promises;
+    
+    const readFileContent = async () => {
+        try{
+            const fileContent = await fs.readFile('./sample.txt', 'utf-8');
+            console.log(fileContent);
+        } catch(e){
+            console.log(e);
+        }
+    }
+    
+    readFileContent();
+    
+- Writing Content to a file Synchronously
+    
+    ```jsx
+    const fs = require("fs");
+    
+    // 1st argument is the  path of file, 2nd is the content to write
+    // note the file content will be overrided by this content
+    const contentToWrite = "This will the file content";
+    fs.writeFileSync("./sample.txt", contentToWrite);
+    ```
+    
+- Writing conetent to a file Asynchronously
+    
+    ```jsx
+    const fs = require("fs");
+    
+    // 1st argument is the  path of file, 2nd is the content to write , 3rd is the callback function
+    const contentToWrite = "This will the file content";
+    
+    fs.writeFile("./sample.txt", contentToWrite, (err) => {
+      if (err) {
+        console.log(err);
+      }
+    });
+    ```
+    
+- Appeding content to a file Synchronously
+    
+    ```jsx
+    const fs = require("fs");
+    
+    // 1st argument is the  path of file, 2nd is the content to append
+    const contentToWrite = "This will be appended to the file";
+    
+    fs.appendFileSync('./sample.txt',  contentToWrite)
+    ```
+    
+- Appending content to a file Asynchronously
+    
+    ```jsx
+    const fs = require("fs");
+    
+    // 1st argument is the  path of file, 2nd is the content to append, 3rd is the callback function
+    const contentToWrite = "This will be appended to the file";
+    
+    fs.appendFile('./sample.txt',  contentToWrite, (err) => {
+        if(err){
+            console.log(err);
+        }
+    })
+    ```
+    
+
+## Important If you are not getting suggestion from the vs code, i have quick fix for you
+
+1. Initialize the directory as an node package , use the below code to do so
+    
+    ```jsx
+    npm init -y 
+    ```
+    
+2. Download the following package using the below code as a dev dependency
+    
+    ```jsx
+    npm i @types/node -D
+    ```
+    
+
+## Topics to Learn if you have Time
+
+1. Events in Node.js
+2. Streams in Node.js

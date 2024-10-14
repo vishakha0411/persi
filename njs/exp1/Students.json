@@ -1,0 +1,32 @@
+{
+  "user-1": {
+      "name": "John",
+      "userId": "1",
+      "dob": "30-08-2000"
+  },
+  "user-4": {
+      "name": "Alice",
+      "userId": "4",
+      "dob": "22-04-1988"
+  },
+  "user-5": {
+      "name": "Bob",
+      "userId": "5",
+      "dob": "05-11-1999"
+  },
+  "user-6": {
+      "name": "Charlie",
+      "userId": "6",
+      "dob": "08-03-1992",
+      "email": "charlie@example.com"
+  },
+  "user-7": {
+      "name": "David",
+      "userId": "7",
+      "dob": "17-07-1993",
+      "email": "david@example.com"
+  },
+  "user-8": {},
+  "user-9": {},
+  "user-10": {}
+}

@@ -1,0 +1,13 @@
+<!--Fill your code here-->
+      <!--Fill your code here-->
+      <h2 id="title">Product Card</h2>
+      <div *ngFor="let product of products; let i = index" class="card">
+        <img [src]="product.imageUrl" [alt]="product.name" [id]="'prod-img' + i">
+        <h2 class="name">{{ product.name }}</h2>
+        <p class="category">Category: {{ product.category }}</p>
+        <p class="price">Price: ${{ product.price }}</p>
+        <p class="stock">Stock: {{ product.availQuantity }}</p>
+        <button *ngIf="product.availQuantity > 0" class="in-stock">Add to Cart</button>
+        <button *ngIf="product.availQuantity === 0" class="out-stock" >Out Of Stock</button>
+        </div>
+

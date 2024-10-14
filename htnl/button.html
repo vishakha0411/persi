@@ -1,0 +1,85 @@
+radio
+<label>
+    <input type="radio" name="choice" value="choice1"> Choice 1
+</label>
+<br>
+<label>
+    <input type="radio" name="choice" value="choice2"> Choice 2
+</label>
+<br>
+<label>
+    <input type="radio" name="choice" value="choice3"> Choice 3
+</label>
+
+<label>
+    <input type="select" name="choice" value="choice1"> Choice 1
+</label>
+
+//checkbox
+<h1>Select Multiple Options</h1>
+
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" name="options" value="option1">
+            Option 1
+        </label>
+        <label>
+            <input type="checkbox" name="options" value="option2">
+            Option 2
+        </label>
+        <label>
+            <input type="checkbox" name="options" value="option3">
+            Option 3
+        </label>
+        <label>
+            <input type="checkbox" name="options" value="option4">
+            Option 4
+        </label>
+    </div>
+
+//multiple 
+<label for="multiple-select">Select multiple options:</label>
+    <select id="multiple-select" multiple>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+    </select>
+
+//table
+<h1>Data Table</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.age }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Optional: Add styling for better readability -->
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>

@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Registration form</title>
+            </head>
+            <body>
+                <h1>Registration form</h1>
+                    <form action="display.php" method="POST">
+                            <div>
+                                        <label for="name">Name</label>
+                                                    <input type="text" id="name" name="name" maxlength="50" required>
+                                                            </div>
+                                                                    <div>
+                                                                                <label for="username">Username</label>
+                                                                                            <input type="text" id="username" name="userName" maxlength="20" required>
+                                                                                                    </div>
+                                                                                                            <div>
+                                                                                                                        <label for="password">Password</label>
+                                                                                                                                    <input type="password" id="password" name="password" maxlength="20" required>
+                                                                                                                                            </div>
+                                                                                                                                                    <div>
+                                                                                                                                                                <label for="mobileNumber">Mobile Number</label>
+                                                                                                                                                                            <input type="tel" id="mobileNumber" name="mobilenumber" maxlength="10" required>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                            <div>
+                                                                                                                                                                                                        <label for="address">Address</label>
+                                                                                                                                                                                                                    <textarea id="address" name="address" rows="4" maxlength="200" required></textarea>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                    <button type="submit" id="register" name="register">Register</button>
+                                                                                                                                                                                                                                        </form>
+
+                                                                                                                                                                                                                                            <!-- Container to display user details dynamically -->
+                                                                                                                                                                                                                                                <div id="userDetailsContainer"></div>
+
+                                                                                                                                                                                                                                                    <script>
+                                                                                                                                                                                                                                                            // JavaScript to handle displaying user details dynamically
+                                                                                                                                                                                                                                                                    const form = document.querySelector('form');
+                                                                                                                                                                                                                                                                            form.addEventListener('submit', async function(event) {
+                                                                                                                                                                                                                                                                                        event.preventDefault(); // Prevent default form submission
+                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                // Fetch the display.php page with form data
+                                                                                                                                                                                                                                                                                                                            const formData = new FormData(form);
+                                                                                                                                                                                                                                                                                                                                        const response = await fetch('display.php', {
+                                                                                                                                                                                                                                                                                                                                                        method: 'POST',
+                                                                                                                                                                                                                                                                                                                                                                        body: formData
+                                                                                                                                                                                                                                                                                                                                                                                    });
+
+                                                                                                                                                                                                                                                                                                                                                                                                // Retrieve the HTML content from display.php
+                                                                                                                                                                                                                                                                                                                                                                                                            const htmlContent = await response.text();
+
+                                                                                                                                                                                                                                                                                                                                                                                                                        // Display the HTML content in userDetailsContainer
+                                                                                                                                                                                                                                                                                                                                                                                                                                    const userDetailsContainer = document.getElementById('userDetailsContainer');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                userDetailsContainer.innerHTML = htmlContent;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            </script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            </html>

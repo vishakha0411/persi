@@ -1,0 +1,7 @@
+{
+    "booking-1":{"id":1,"movieTitle":"Glory","userName":"Liya","numberOfTickets": 2,"bookingDate":"2024-01-17"},
+    "booking-2":{"id":2,"movieTitle":"Avatar","userName":"Rio","numberOfTickets":3,"bookingDate":"2024-02-18"},
+    "booking-3":{"id":3,"movieTitle":"The Terminal","userName":"Amy","numberOfTickets":4,"bookingDate":"2024-02-18"},
+    "booking-4":{"id":4,"movieTitle":"The Bucket List","userName":"Jack","numberOfTickets":2,"bookingDate":"2024-02-19"},
+    "booking-5":{"id":5,"movieTitle":"The Godfather","userName":"Jose","numberOfTickets":1,"bookingDate":"2024-02-20"}
+}

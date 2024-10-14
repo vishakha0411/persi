@@ -1,0 +1,180 @@
+Example 1: Retrieving Data from JSON with a Filter
+This example shows how to retrieve a specific item from a list based on an ID parameter.
+
+typescript
+Copy code
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
+
+@Component({
+  selector: 'app-item-detail',
+  templateUrl: './item-detail.component.html',
+})
+export class ItemDetailComponent implements OnInit {
+  id: number = 0;
+  item: any;
+  items: any[];
+
+  constructor(private route: ActivatedRoute, private service: DataService) {}
+
+  ngOnInit(): void {
+    // Retrieve the 'id' parameter from the route
+    this.route.params.subscribe((params) => {
+      this.id = +params['id']; // Convert id to a number
+    });
+
+    // Fetch all items from the service
+    this.service.getAllItems().subscribe(
+      (data) => {
+        this.items = data; // Store the fetched items
+        this.item = this.items.find((item) => item.id === this.id); // Find the item by ID
+      },
+      (error) => {
+        console.error('Error fetching items:', error);
+      }
+    );
+  }
+}
+Example 2: Displaying a List of Categories
+This example retrieves a list of categories from a JSON file and displays them.
+
+typescript
+Copy code
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+
+@Component({
+  selector: 'app-category-list',
+  templateUrl: './category-list.component.html',
+})
+export class CategoryListComponent implements OnInit {
+  categories: any[] = [];
+
+  constructor(private service: DataService) {}
+
+  ngOnInit(): void {
+    // Fetch all categories from the service
+    this.service.getAllCategories().subscribe(
+      (data) => {
+        this.categories = data; // Store the fetched categories
+      },
+      (error) => {
+        console.error('Error fetching categories:', error);
+      }
+    );
+  }
+}
+Example 3: Getting Book Details by Title
+In this example, we retrieve book details from a list based on the book title passed in the route parameters.
+
+typescript
+Copy code
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
+
+@Component({
+  selector: 'app-book-detail',
+  templateUrl: './book-detail.component.html',
+})
+export class BookDetailComponent implements OnInit {
+  title: string = '';
+  book: any;
+
+  constructor(private route: ActivatedRoute, private service: DataService) {}
+
+  ngOnInit(): void {
+    // Retrieve the 'title' parameter from the route
+    this.route.params.subscribe((params) => {
+      this.title = params['title']; // Get the title from params
+    });
+
+    // Fetch all books from the service
+    this.service.getAllBooks().subscribe(
+      (data) => {
+        this.book = data.find((book) => book.title === this.title); // Find the book by title
+      },
+      (error) => {
+        console.error('Error fetching books:', error);
+      }
+    );
+  }
+}
+Example 4: Fetching and Displaying Data Conditionally
+This example fetches data and displays it conditionally based on user input or route parameters.
+
+typescript
+Copy code
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+
+@Component({
+  selector: 'app-search-books',
+  templateUrl: './search-books.component.html',
+})
+export class SearchBooksComponent implements OnInit {
+  searchTerm: string = '';
+  books: any[] = [];
+  filteredBooks: any[] = [];
+
+  constructor(private service: DataService) {}
+
+  ngOnInit(): void {
+    // Fetch all books from the service
+    this.service.getAllBooks().subscribe(
+      (data) => {
+        this.books = data; // Store the fetched books
+        this.filterBooks(); // Filter books based on search term
+      },
+      (error) => {
+        console.error('Error fetching books:', error);
+      }
+    );
+  }
+
+  filterBooks(): void {
+    // Filter the books based on the search term
+    this.filteredBooks = this.books.filter((book) =>
+      book.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+}
+Example 5: Using RxJS Operators for More Complex Logic
+In this example, we use RxJS operators to combine data streams and handle them more effectively.
+
+typescript
+Copy code
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
+import { switchMap } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-category-books',
+  templateUrl: './category-books.component.html',
+})
+export class CategoryBooksComponent implements OnInit {
+  categoryName: string = '';
+  books: any[] = [];
+
+  constructor(private route: ActivatedRoute, private service: DataService) {}
+
+  ngOnInit(): void {
+    // Use switchMap to handle the stream of category names
+    this.route.params.pipe(
+      switchMap((params) => {
+        this.categoryName = params['categoryName'];
+        return this.service.getAllCategories(); // Fetch all categories
+      })
+    ).subscribe(
+      (categories) => {
+        const category = categories.find(cat => cat.name === this.categoryName);
+        this.books = category ? category.books : []; // Store the books of the category
+      },
+      (error) => {
+        console.error('Error fetching categories:', error);
+      }
+    );
+  }
+}

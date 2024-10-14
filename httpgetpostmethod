@@ -1,0 +1,76 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+
+  private jsonUrl = 'assets/data.json';  // Path to your JSON file
+
+  constructor(private http: HttpClient) {}
+
+  // GET request to fetch data
+  getData(): Observable<any> {
+    return this.http.get(this.jsonUrl);
+  }
+
+  // POST request to add new data
+  postData(data: any): Observable<any> {
+    return this.http.post(this.jsonUrl, data);
+  }
+
+  // PUT request to update existing data
+  updateData(id: number, updatedData: any): Observable<any> {
+    return this.http.put(`${this.jsonUrl}/${id}`, updatedData);
+  }
+
+  // DELETE request to remove data
+  deleteData(id: number): Observable<any> {
+    return this.http.delete(`${this.jsonUrl}/${id}`);
+  }
+}
+
+addNewData() {
+    const newData = { name: 'New Item', value: 42 };
+    this.dataService.postData(newData).subscribe((response) => {
+      console.log('Data added:', response);
+    });
+  }
+
+  updateData(id: number) {
+    const updatedData = { name: 'Updated Item', value: 50 };
+    this.dataService.updateData(id, updatedData).subscribe((response) => {
+      console.log('Data updated:', response);
+    });
+  }
+
+  deleteData(id: number) {
+    this.dataService.deleteData(id).subscribe(() => {
+      console.log('Data deleted');
+    });
+  }
+
+  In src/app/components/example.component.ts:
+
+typescript
+Copy code
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html'
+})
+export class ExampleComponent implements OnInit {
+  data: any[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.getData().subscribe((response) => {
+      this.data = response;
+    });
+  }
+}

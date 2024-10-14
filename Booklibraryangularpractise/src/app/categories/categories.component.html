@@ -1,0 +1,13 @@
+<!-- Fill your code here -->
+<h1>Category</h1>
+<select [(ngModel)]="s">
+    <option *ngFor="let c of category" [ngValue]="c">{{c.name}}</option>
+</select>
+
+< *ngIf="s">
+    <div>{{s?.name}}</div>
+    <div>{{s?.description}}</div>
+    <button [routerLink]="['/categories', s.name]">View More</button>
+</div>
+
+<div *ngIf="!s">Please Select Category</div>

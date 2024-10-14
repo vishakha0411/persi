@@ -1,0 +1,7 @@
+<h2 id="title">Enrolled Users</h2>
+<ul class="users">
+  <li *ngFor="let user of users" [id]="'user-' + user.id">
+    {{ user.id }} {{ user.name }}
+  </li>
+</ul>
+

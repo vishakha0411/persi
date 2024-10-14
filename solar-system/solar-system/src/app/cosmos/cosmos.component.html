@@ -1,0 +1,14 @@
+<h1>The Planets</h1>
+
+<div *ngFor="let p of planets" (click)="onDetailPlanet(p)">
+  <img [src]="p.img" alt="Planet {{ p.id }}" /><br />
+  <div>{{ p.name }}</div>
+  <br />
+</div>
+
+<button (click)="onBackToHome()">Back</button>
+
+<app-description [userSelectedPlanet]="selectedPlanet" *ngIf="selectedPlanet"></app-description>
+
+
+

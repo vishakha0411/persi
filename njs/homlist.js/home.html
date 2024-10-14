@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management</title>
+    <style>
+        #eventManagement{
+            display: inline;
+            top: 0;
+            width: 100%;
+            height: 5px;
+        }
+        h1{
+            background-color: blue;
+            color: white;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+        }
+        .image{
+            display: inline;
+            width: 100%;
+            height: 18px;
+        }
+        .container{
+            display: inline;
+        }
+        #content{
+            font: 100;
+        }
+        #imgs{
+            margin-left: 210px;
+             align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="eventManagement">
+        <h1>Event Management</h1>
+    </div>
+    <img src="event_management.jpg" id="imgs">
+    <div class="container">
+        <p id="content">The Evenire is a strong and fast growing organisation with high level of standardization. Often we take event management as a part of project management, but we consider that event management has very specific concepts and issues, and needs further developed methods and tools.</p>
+        <strong>Some of these events are listed below:</strong>
+    </div>
+    <div><a href="/list" id="list">LIST OF EVENTS</a></div>
+    <script>
+        const listed = document.getElementById('list');
+        listed.addEventListener('click' , function(){
+        });
+    </script> 
+</body>
+</html>
+
+<!--
+<script>
+    const listed = document.getElementById('list');
+    listed.addEventListener('click', function(){
+        alert('List was clicked!');
+    });
+</script>
+-->
